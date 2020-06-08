@@ -79,7 +79,7 @@ final class SynchronousDriver implements DriverInterface, QueueDependentInterfac
      */
     public function push(JobInterface $job): MessageInterface
     {
-        $key = max(array_keys($this->messages));
+        $key = count($this->messages) + $this->current;
         $message = new Message((string) ++$key, $job);
         $this->messages[] = $message;
 

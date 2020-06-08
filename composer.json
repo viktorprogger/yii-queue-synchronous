@@ -41,6 +41,12 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.0.x-dev"
+        },
+        "config-plugin": {
+            "tests-app": [
+                "$console",
+                "tests/App/config/main.php"
+            ]
         }
     },
     "scripts": {
