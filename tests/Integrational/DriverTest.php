@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Queue\Driver\Tests\Integrational;
+namespace Yiisoft\Yii\Queue\Synchronous\Tests\Integrational;
 
-use Yiisoft\Yii\Queue\Driver\Tests\App\DelayableJob;
-use Yiisoft\Yii\Queue\Driver\Tests\App\PrioritizedJob;
-use Yiisoft\Yii\Queue\Driver\Tests\App\RetryableJob;
-use Yiisoft\Yii\Queue\Driver\Tests\App\SimpleJob;
-use Yiisoft\Yii\Queue\Driver\Tests\TestCase;
+use Yiisoft\Yii\Queue\Synchronous\Tests\App\DelayableJob;
+use Yiisoft\Yii\Queue\Synchronous\Tests\App\PrioritizedJob;
+use Yiisoft\Yii\Queue\Synchronous\Tests\App\RetryableJob;
+use Yiisoft\Yii\Queue\Synchronous\Tests\App\SimpleJob;
+use Yiisoft\Yii\Queue\Synchronous\Tests\TestCase;
 use Yiisoft\Yii\Queue\Exception\JobNotSupportedException;
 use Yiisoft\Yii\Queue\Job\DelayableJobInterface;
 use Yiisoft\Yii\Queue\Job\PrioritisedJobInterface;

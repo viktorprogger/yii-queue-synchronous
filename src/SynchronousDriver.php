@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Queue\Driver;
+namespace Yiisoft\Yii\Queue\Synchronous;
 
 use InvalidArgumentException;
 use Yiisoft\Yii\Queue\Cli\LoopInterface;
@@ -36,9 +36,6 @@ final class SynchronousDriver implements DriverInterface, QueueDependentInterfac
         $this->run([$this->worker, 'process']);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function nextMessage(): ?MessageInterface
     {
         $message = null;
@@ -52,9 +49,6 @@ final class SynchronousDriver implements DriverInterface, QueueDependentInterfac
         return $message;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function status(string $id): JobStatus
     {
         $id = (int) $id;
@@ -74,9 +68,6 @@ final class SynchronousDriver implements DriverInterface, QueueDependentInterfac
         throw new InvalidArgumentException('There is no job with the given id.');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function push(JobInterface $job): MessageInterface
     {
         $key = count($this->messages) + $this->current;
@@ -86,17 +77,11 @@ final class SynchronousDriver implements DriverInterface, QueueDependentInterfac
         return $message;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function subscribe(callable $handler): void
     {
         $this->run($handler);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function canPush(JobInterface $job): bool
     {
         return !($job instanceof DelayableJobInterface || $job instanceof PrioritisedJobInterface);

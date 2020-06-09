@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Queue\Driver\Tests\App;
+namespace Yiisoft\Yii\Queue\Synchronous\Tests\App;
 
 use Yiisoft\Yii\Queue\Job\JobInterface;
 
